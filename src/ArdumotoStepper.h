@@ -69,31 +69,50 @@
  * http://www.arduino.cc/en/Tutorial/ArdumotoStepper
  */
 
-// ensure this library description is only included once
+ // ensure this library description is only included once
 #ifndef ArdumotoStepper_h
 #define ArdumotoStepper_h
 
+
+#define FULLSTEP 1
+#define HALFSTEP 2
+
+
 // library interface description
 class ArdumotoStepper {
-  public:
+public:
     // constructors:
     ArdumotoStepper(int number_of_steps);
 
     // speed setter method:
-    void setSpeed(long whatSpeed);
+    void setSpeed(float whatSpeed);
+
+    // report Step Speed
+    short getStepSpeed();
+
+    // set step mode to FULLSTEP or HALFSTEP
+    void setStepMode(unsigned short mode);
+
+    // Get the stepping mode 
+    int getStepMode(void);
+
+    // release (turn off) stepper
+    void release(void);
 
     // mover method:
     void step(int number_of_steps);
 
     int version(void);
 
-  private:
+private:
     void stepMotor(int this_step);
+    void halfstepMotor(int this_step);
 
     int direction;            // Direction of rotation
     unsigned long step_delay; // delay between steps, in ms, based on speed
     int number_of_steps;      // total number of steps this motor can take
     int step_number;          // which step the motor is on
+    int stepmode;             // FULLSTEP or HALFSTEP
 
     // motor pin numbers:
     int motor_pin_1;
