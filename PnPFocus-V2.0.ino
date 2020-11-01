@@ -2,7 +2,7 @@
 //
 // Original code by orly.andico@gmail.com, 13 April 2014
 // Modified by Anat Ruangrassamee (aruangra@yahoo.com), 26 September 2017
-// Modified by Todd Benko (todd.benko.progs@gmail.com), 12 September, 2020
+// Modified V2.0 by Todd Benko (Dtdastro@gmail.com), 01 November, 2020
 
 //*****************************************************************************************************************************************************************
 //  User configurations
@@ -61,8 +61,9 @@ const unsigned short backlashValue=20;                 // increase this value to
 // Temperature Units:
 const bool displayFahrenheit = false;                  // false =  temperatures in Celsius., true = temperatures in Fahrenheit.
 
-const bool enableHalfStepMode =  true;                // The code is all wired up for half steps however testing reveals many of the steppers just do not have the 
-                                                       // pull in torque in the armature magnet to ensure a proper half step movement  Recommend to only use full step mode.
+// Enable Half step mode
+const bool enableHalfStepMode =  true;                // If stepper motor stalls/studders in half step mode, can disable half step mode so only full step is selected.
+                                                      // true = half and full step modes available, false = only full step mode is enabled.
 
 ///////////////////////////////////////////////////////// 
 //   End of User configuration
