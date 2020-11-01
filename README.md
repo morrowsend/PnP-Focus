@@ -4,7 +4,7 @@ https://github.com/aruangra/PnP-Focus
 
 Since there are significant Changes with this V2.0 version compared to the original project, let's start fresh with the features.
 
-# PNP-Focus Version 2.0
+# PnP-Focus Version 2.0
 
 ## Objective:
 To build a focus controller which takes arduino controller boards and plug-in controller shields to assemble a focus controller with minimal soldering or wiring.
